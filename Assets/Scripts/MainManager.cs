@@ -41,7 +41,7 @@ public class MainManager : MonoBehaviour
         if (Data.Instance != null)
         {
                 
-                nameText.text = "Best Score: " + Data.Instance.NameSelect + " : " + Data.Instance.score;
+                nameText.text = "Best Score: " + Data.Instance.highScorePName + " : " + Data.Instance.score;
             
         }
     }
@@ -80,10 +80,12 @@ public class MainManager : MonoBehaviour
     {
         if (m_Points >= Data.Instance.score)
         {
+            Data.Instance.highScorePName = Data.Instance.NameSelect;
             Data.Instance.score = m_Points;
         }
         m_GameOver = true;
         GameOverText.SetActive(true);
+        Data.Instance.SaveScore();
     }
   
 }
