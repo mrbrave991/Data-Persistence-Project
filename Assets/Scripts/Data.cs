@@ -6,7 +6,7 @@ public class Data : MonoBehaviour
 {
     public static Data Instance;
     public string NameSelect;
-    public int score;
+    public int score = 0;
     private void Awake()
     {
         if(Instance != null)

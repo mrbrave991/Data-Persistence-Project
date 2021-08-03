@@ -38,9 +38,11 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
-        if(Data.Instance != null)
+        if (Data.Instance != null)
         {
-            nameText.text = "Best Score: " + Data.Instance.NameSelect + " : "+ Data.Instance.score; 
+                
+                nameText.text = "Best Score: " + Data.Instance.NameSelect + " : " + Data.Instance.score;
+            
         }
     }
 
@@ -72,11 +74,14 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-        Data.Instance.score = m_Points;
     }
 
     public void GameOver()
     {
+        if (m_Points >= Data.Instance.score)
+        {
+            Data.Instance.score = m_Points;
+        }
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
