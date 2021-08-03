@@ -5,7 +5,8 @@ using UnityEngine;
 public class Data : MonoBehaviour
 {
     public static Data Instance;
-    public string Name;
+    public string NameSelect;
+    public int score;
     private void Awake()
     {
         if(Instance != null)

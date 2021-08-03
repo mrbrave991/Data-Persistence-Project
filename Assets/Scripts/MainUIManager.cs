@@ -8,10 +8,17 @@ using UnityEditor;
 
 public class MainUIManager : MonoBehaviour
 {
+   
 
+    public void Start()
+    {
+       
+    }
     public void StartNew()
     {
+        
         SceneManager.LoadScene(1);
+        
     }
     public void Exit()
     {
@@ -23,7 +30,7 @@ public class MainUIManager : MonoBehaviour
     }
     public void NameEntered(string name)
     {
-        Data.Instance.name = name;
+        Data.Instance.NameSelect = name;
     }
 
 }
